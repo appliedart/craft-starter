@@ -1,1 +1,3 @@
-{% include ['_pages/' ~ entry.uri, '_channels/' ~ entry.section ~ '-' ~ entry.type, '_channels/' ~ entry.section, '_pages/default'] %}
+{% set possibleTemplates = ['_pages/' ~ entry.uri, '_channels/' ~ entry.section.handle ~ '-' ~ entry.type, '_channels/' ~ entry.section.handle, '_pages/default'] %}
+{# {{ dump(possibleTemplates) }} #}
+{% include possibleTemplates %}
